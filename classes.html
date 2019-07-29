@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>JSX</title>
+    <title>Classes</title>
     <link href="style.css" rel="stylesheet" type="text/css">
     <script src="https://unpkg.com/react@16.7.0/umd/react.development.js" type="text/javascript"></script>
     <script src="https://unpkg.com/react-dom@16.7.0/umd/react-dom.development.js" type="text/javascript"></script>
@@ -16,15 +16,19 @@
 
     const River = ({name}) =>  <h1>{name}</h1>;
 
-    const App = () => (
-        <div>
-        <River name="River Thames" />
-        <River name="River New" />
-        <River name="River Old" />
-        <River name="Middle of the road River" />
-        </div>
-    )
-
+    class App extends React.Component {
+        render(){
+            return (
+                <div>
+                    <River name="River Thames" />
+                    <River name="River New" />
+                    <River name="River Old" />
+                    <River name="Middle of the road River Classes" />
+                    <River name="I want a tesla model 3 please Mr.Musk..." />
+                </div>
+            )
+        }
+    }
 
         ReactDOM.render(
           <App />,
