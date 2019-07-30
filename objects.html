@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <title>Classes</title>
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <script src="https://unpkg.com/react@16.7.0/umd/react.development.js" type="text/javascript"></script>
+    <script src="https://unpkg.com/react-dom@16.7.0/umd/react-dom.development.js" type="text/javascript"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js" type="text/javascript"></script>
+</head>
+
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+
+    const riverLake = [
+        {id: 1, name: "Many Fish Lake", trailhead: "Many Fishes"},
+        {id: 2, name: "No Many Fish Lake", trailhead: "No Many Fishes"},
+        {id: 3, name: "All Fish Lake", trailhead: "All Fishes"},
+        ];
+
+
+
+        const App = ({lakes}) => (
+             <ul>
+                {lakes.map ((lake) => 
+                    <li key={lake.id}>{lake.name} - Fish Head Yeah: {lake.trailhead}</li>
+                )}
+             </ul>
+        )      
+        
+        ReactDOM.render(
+          <App lakes={riverLake} />,
+          document.getElementById("root")
+        );
+    </script>
+
+</body>
+
+</html>

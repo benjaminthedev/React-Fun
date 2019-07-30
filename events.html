@@ -14,16 +14,28 @@
     <div id="root"></div>
     <script type="text/babel">
 
-    const River = ({name}) =>  <h1>{name}</h1>;
+    const River = ({name}) => <h1>{name}</h1>;
 
     class App extends React.Component {
             state = {
                 loggedIn: false
             }
+            logIn = () => {
+                this.setState({loggedIn : true})
+            }
+            logOut = () => this.setState({loggedIn: false})
+
+
             render(){
                 return (
                     <div>
-                    <div>The User Is{this.state.loggedIn ? 'Logged In' : 'Not Logged In'}</div>
+                    <button onClick={this.logIn}>Log In</button>
+                    <button onClick={this.logOut}>Log Out</button>
+                    <div>The User Is{
+                        this.state.loggedIn
+                        ? 'Logged In'                         
+                        : 'Not Logged In'}.
+                        </div>
                         <River name="River Thames" />
                         <River name="River New" />
                         <River name="River Old" />
