@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <title>Classes</title>
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <script src="https://unpkg.com/react@16.7.0/umd/react.development.js" type="text/javascript"></script>
+    <script src="https://unpkg.com/react-dom@16.7.0/umd/react-dom.development.js" type="text/javascript"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js" type="text/javascript"></script>
+</head>
+
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+
+    const River = ({name}) => <h1>{name}</h1>;
+    const SkiResport = ({name}) => <h1>{name}</h1>;
+
+        const App = ({summer}) => (
+             <div>
+                {summer
+                 ? <River name="Nice River" />
+                 : <SkiResport name="Nice Ski" /> }
+            </div>
+        )      
+        
+        ReactDOM.render(
+          <App summer={false} />,
+          document.getElementById("root")
+        );
+    </script>
+
+</body>
+
+</html>
